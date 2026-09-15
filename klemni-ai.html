@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KLEMNI AI — студия авторской парфюмерии</title>
+  <meta name="description" content="KLEMNI AI — студия авторской парфюмерии. Шесть ароматов Extrait-концентрации, собранных парфюмером и алгоритмом. Малые партии, стойкость до 72 часов.">
+  <meta name="theme-color" content="#070708">
+  <meta property="og:title" content="KLEMNI AI — студия авторской парфюмерии">
+  <meta property="og:description" content="Аромат, который остаётся, когда вы уже ушли.">
+  <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_14d97907-15c3-4367-a8c4-986c0260bcd9_min.webp">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_a25764b9-a61a-4324-be83-f9c515de7739_min.webp" fetchpriority="high">
+  <style>
+/* =========================================================
+   KLEMNI AI — obsidian & bone
+   ========================================================= */
+:root {
+  --bg: #070708;
+  --bg-2: #0e0e10;
+  --bg-3: #151517;
+  --ink: #ede8df;
+  --ink-2: #a39d93;
+  --ink-3: #66625b;
+  --gold: #cdbc98;
+  --gold-2: #ebdfc4;
+  --line: rgba(237, 232, 223, 0.08);
+  --line-2: rgba(237, 232, 223, 0.16);
+  --glass: rgba(255, 255, 255, 0.03);
+
+  /* light section tokens */
+  --l-bg: #e9e4db;
+  --l-bg-2: #dfd9ce;
+  --l-ink: #121113;
+  --l-ink-2: #5f5a52;
+  --l-ink-3: #8f8a80;
+  --l-gold: #8a7548;
+  --l-line: rgba(18, 17, 19, 0.1);
+
+  --display: "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  --body: "Jost", "Futura", "Avenir Next", -apple-system, "Segoe UI", sans-serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --wrap: 1360px;
+  --gutter: clamp(20px, 5vw, 72px);
+  --r: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden; min-height: 100dvh;
+}
+body.is-locked { overflow: hidden; }
+img, svg { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+h1, h2, h3, h4, p, dl, dd, figure { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+::selection { background: rgba(205, 188, 152, 0.35); color: #fff; }
+:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+.section { position: relative; padding-block: clamp(96px, 12vw, 176px); }
+
+/* ---------- light sections ---------- */
+.light { background: var(--l-bg); color: var(--l-ink); }
+.light .label { color: var(--l-gold); }
+.light .section__desc, .light p { color: var(--l-ink-2); }
+.light .display { color: var(--l-ink); }
+
+/* ---------- typography ---------- */
+.label {
+  font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 500; color: var(--gold);
+  margin-bottom: 26px;
+}
+.display {
+  font-family: var(--display); font-weight: 400; font-size: clamp(40px, 5.6vw, 82px);
+  line-height: 1; letter-spacing: -0.01em; text-wrap: balance;
+}
+.display em { font-style: italic; font-weight: 400; }
+.section__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: clamp(52px, 6vw, 92px); }
+.section__desc { max-width: 400px; color: var(--ink-2); font-size: 16px; line-height: 1.7; }
+
+/* ---------- atmosphere ---------- */
+.grain {
+  position: fixed; inset: -50%; width: 200%; height: 200%; pointer-events: none; z-index: 60; opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.4s steps(6) infinite; mix-blend-mode: overlay;
+}
+@keyframes grain { 0%,100% { transform: translate(0,0);} 20% { transform: translate(-3%,2%);} 40% { transform: translate(2%,-4%);} 60% { transform: translate(-1%,3%);} 80% { transform: translate(3%,-1%);} }
+.fog { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0; transition: opacity 1.6s ease; }
+.fog.is-on { opacity: 1; }
+
+/* ---------- preloader ---------- */
+.preloader { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: grid; place-content: center; justify-items: center; gap: 26px; transition: opacity .9s var(--ease-io), visibility .9s; }
+.preloader.is-done { opacity: 0; visibility: hidden; }
+.preloader__word { display: flex; font-family: var(--display); font-size: clamp(44px, 8vw, 96px); letter-spacing: 0.22em; color: var(--ink); overflow: hidden; }
+.preloader__word span { display: inline-block; transform: translateY(110%); animation: lineUp 1.1s var(--ease) forwards; }
+.preloader__word span:nth-child(1) { animation-delay: .05s; } .preloader__word span:nth-child(2) { animation-delay: .12s; }
+.preloader__word span:nth-child(3) { animation-delay: .19s; } .preloader__word span:nth-child(4) { animation-delay: .26s; }
+.preloader__word span:nth-child(5) { animation-delay: .33s; } .preloader__word span:nth-child(6) { animation-delay: .40s; }
+.preloader__line { width: min(60vw, 320px); height: 1px; background: var(--line-2); overflow: hidden; }
+.preloader__line span { display: block; height: 100%; width: 100%; background: var(--gold); transform: translateX(-100%); animation: load 1.6s var(--ease-io) .3s forwards; }
+@keyframes load { to { transform: translateX(0);} }
+.preloader__sub { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-3); opacity: 0; animation: fadeIn .8s ease .8s forwards; }
+
+/* ---------- header ---------- */
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); transition: background .5s, backdrop-filter .5s, transform .5s var(--ease), box-shadow .5s; }
+.header.is-scrolled { background: rgba(7,7,8,.55); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); box-shadow: 0 1px 0 var(--line); }
+.header.is-hidden { transform: translateY(-100%); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.logo { display: inline-flex; align-items: flex-start; gap: 4px; font-family: var(--display); font-size: 22px; letter-spacing: .24em; color: var(--ink); }
+.light .logo, .footer .logo { color: inherit; }
+.logo__ai { font-family: var(--body); font-size: 9px; letter-spacing: .2em; font-weight: 500; color: var(--gold); top: 2px; position: relative; }
+.nav { display: flex; align-items: center; gap: 38px; }
+.nav__link { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); position: relative; padding-block: 6px; transition: color .3s; }
+.nav__link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .5s var(--ease); }
+.nav__link:hover { color: var(--ink); }
+.nav__link:hover::after { transform: scaleX(1); transform-origin: left; }
+.burger { display: none; width: 44px; height: 44px; position: relative; z-index: 60; -webkit-tap-highlight-color: transparent; }
+.burger span { position: absolute; left: 10px; width: 24px; height: 1px; background: var(--ink); transition: transform .5s var(--ease), top .5s var(--ease); }
+.burger span:nth-child(1) { top: 18px; } .burger span:nth-child(2) { top: 26px; }
+.burger.is-open span:nth-child(1) { top: 22px; transform: rotate(45deg); }
+.burger.is-open span:nth-child(2) { top: 22px; transform: rotate(-45deg); }
+
+/* ---------- buttons ---------- */
+.btn { position: relative; display: inline-flex; align-items: center; gap: 16px; padding: 18px 30px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; overflow: hidden; isolation: isolate; white-space: nowrap; transition: transform .6s var(--ease), color .4s, border-color .4s, background .4s; -webkit-tap-highlight-color: transparent; }
+.btn--lg { padding: 22px 36px; }
+.btn--sm { padding: 12px 20px; font-size: 11px; }
+.btn--full { width: 100%; justify-content: center; }
+.btn__arrow { width: 18px; height: 18px; display: grid; place-items: center; }
+.btn__arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; transition: transform .6s var(--ease); }
+.btn:hover .btn__arrow svg { transform: translateX(5px); }
+.btn--solid { color: #0d0c0a; background: var(--ink); }
+.btn--solid::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--gold-2); transform: translateY(101%); transition: transform .6s var(--ease); }
+.btn--solid:hover::before { transform: translateY(0); }
+.btn--solid:hover { transform: translateY(-2px); }
+.btn--solid:active { transform: translateY(0) scale(.98); }
+.btn--line { color: var(--ink); border: 1px solid var(--line-2); background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.btn--line::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.btn--line:hover { color: #0d0c0a; border-color: var(--ink); }
+.btn--line:hover::before { transform: scaleX(1); }
+.btn.is-loading { pointer-events: none; opacity: .75; }
+.btn.is-loading > span { animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100% { opacity: .5;} 50% { opacity: 1;} }
+.link { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); padding-block: 8px; position: relative; transition: color .3s; }
+.link::after { content: "→"; transition: transform .5s var(--ease); }
+.link:hover { color: var(--gold-2); }
+.link:hover::after { transform: translateX(6px); }
+.link--dark { color: var(--l-ink); }
+.link--dark:hover { color: var(--l-gold); }
+.round { width: 54px; height: 54px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; color: var(--ink-2); transition: all .5s var(--ease); }
+.round svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.round:hover { color: var(--ink); border-color: var(--ink); transform: scale(1.06); }
+
+/* ---------- hero ---------- */
+.hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding-top: calc(100px + env(safe-area-inset-top, 0px)); padding-bottom: 80px; overflow: hidden; z-index: 2; }
+.hero__glow { position: absolute; right: -10vw; top: -10vh; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, rgba(196, 140, 70, .22), rgba(196,140,70,0) 60%); filter: blur(60px); will-change: transform; }
+.hero__wordmark { position: absolute; left: 50%; bottom: -0.12em; transform: translateX(-50%); font-family: var(--display); font-size: clamp(140px, 24vw, 380px); letter-spacing: .06em; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(237,232,223,.07); pointer-events: none; user-select: none; white-space: nowrap; will-change: transform; }
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(24px, 4vw, 64px); position: relative; z-index: 2; }
+.hero__label { opacity: 0; transform: translateY(14px); }
+.hero__title { font-family: var(--display); font-weight: 400; font-size: clamp(56px, 8.4vw, 132px); line-height: .96; letter-spacing: -0.015em; margin-bottom: 36px; }
+.hero__title em { font-style: italic; color: var(--gold-2); }
+.line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.line > span { display: block; transform: translateY(110%); }
+.hero__lead { max-width: 440px; font-size: clamp(16px, 1.2vw, 18px); color: var(--ink-2); line-height: 1.7; margin-bottom: 44px; opacity: 0; transform: translateY(14px); }
+.hero__actions { display: flex; align-items: center; gap: 34px; flex-wrap: wrap; opacity: 0; transform: translateY(14px); }
+.hero__facts { display: flex; gap: clamp(28px, 4vw, 60px); margin-top: 72px; opacity: 0; transform: translateY(14px); }
+.hero__facts dt { font-family: var(--display); font-size: 32px; line-height: 1; font-variant-numeric: tabular-nums; }
+.hero__facts dd { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
+
+.hero__visual { position: relative; display: grid; justify-items: center; opacity: 0; }
+.hero__photo { position: relative; width: min(100%, 520px); aspect-ratio: 3 / 4; transform-style: preserve-3d; will-change: transform; animation: float 8s ease-in-out infinite; }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; filter: contrast(1.04) saturate(1.05); }
+.hero__photo::after { content: ""; position: absolute; inset: auto 10% -6% 10%; height: 20%; background: radial-gradient(ellipse at center top, rgba(205,160,90,.35), transparent 70%); filter: blur(22px); pointer-events: none; }
+@keyframes float { 0%,100% { translate: 0 0;} 50% { translate: 0 -10px;} }
+.spray { position: absolute; inset: -30% -50% -10% -50%; width: 200%; height: 140%; pointer-events: none; z-index: 3; }
+.hero__caption { display: flex; align-items: baseline; gap: 18px; margin-top: 26px; opacity: 0; transform: translateY(14px); will-change: transform; }
+.hero__caption-num { font-size: 11px; letter-spacing: .3em; color: var(--gold); }
+.hero__caption-name { font-family: var(--display); font-style: italic; font-size: 26px; }
+.hero__caption-notes { font-size: 12px; letter-spacing: .1em; color: var(--ink-3); }
+
+.is-loaded .hero__label { animation: fadeUp 1.2s var(--ease) .2s forwards; }
+.is-loaded .hero__title .line:nth-child(1) > span { animation: lineUp 1.3s var(--ease) .35s forwards; }
+.is-loaded .hero__title .line:nth-child(2) > span { animation: lineUp 1.3s var(--ease) .47s forwards; }
+.is-loaded .hero__title .line:nth-child(3) > span { animation: lineUp 1.3s var(--ease) .59s forwards; }
+.is-loaded .hero__lead { animation: fadeUp 1.2s var(--ease) .85s forwards; }
+.is-loaded .hero__actions { animation: fadeUp 1.2s var(--ease) 1s forwards; }
+.is-loaded .hero__facts { animation: fadeUp 1.2s var(--ease) 1.15s forwards; }
+.is-loaded .hero__visual { animation: photoIn 2s var(--ease) .25s forwards; }
+.is-loaded .hero__caption { animation: fadeUp 1.2s var(--ease) 1.4s forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0);} }
+@keyframes lineUp { to { transform: translateY(0);} }
+@keyframes fadeIn { to { opacity: 1;} }
+@keyframes photoIn { from { opacity: 0; transform: translateY(50px) scale(.96); filter: blur(16px);} to { opacity: 1; transform: none; filter: blur(0);} }
+
+.scroll-hint { position: absolute; left: var(--gutter); bottom: 36px; z-index: 3; display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-3); opacity: 0; animation: fadeIn 1s ease 2.2s forwards; }
+.scroll-hint span { width: 56px; height: 1px; background: var(--line-2); position: relative; overflow: hidden; }
+.scroll-hint span::after { content: ""; position: absolute; inset: 0; background: var(--gold); animation: lineScroll 2.4s var(--ease-io) infinite; }
+@keyframes lineScroll { 0% { transform: translateX(-100%);} 50% { transform: translateX(0);} 100% { transform: translateX(100%);} }
+
+/* ---------- marquee ---------- */
+.marquee { position: relative; z-index: 2; overflow: hidden; border-block: 1px solid var(--line); padding-block: 22px; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.marquee__track { display: flex; align-items: center; gap: 48px; width: max-content; font-family: var(--display); font-style: italic; font-size: 22px; color: var(--ink-2); animation: marquee 40s linear infinite; }
+.marquee__track i { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex: none; }
+@keyframes marquee { to { transform: translateX(-50%);} }
+
+/* ---------- manifest ---------- */
+.manifest { z-index: 2; }
+.manifest__head { max-width: 1000px; margin-bottom: clamp(56px, 7vw, 110px); }
+.manifest__body { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(40px, 6vw, 110px); align-items: start; }
+.manifest__text { display: grid; gap: 22px; font-size: 17px; line-height: 1.75; position: sticky; top: 120px; }
+.manifest__gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 2vw, 28px); align-items: start; }
+.pic { position: relative; }
+.pic--a { grid-column: 1 / 7; aspect-ratio: 4/5; }
+.pic--b { grid-column: 7 / 13; aspect-ratio: 4/5; margin-top: clamp(60px, 10vw, 160px); }
+.pic--c { grid-column: 3 / 9; aspect-ratio: 5/4; margin-top: clamp(-20px, -2vw, -40px); }
+.pic__frame { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--r); background: var(--bg-3); }
+.pic__frame img { width: 100%; height: 100%; object-fit: cover; transform: translateY(var(--py, 0)) scale(1.12); transition: transform .2s linear; will-change: transform; }
+.pic:hover .pic__frame img { filter: saturate(1.08); }
+.pic figcaption { margin-top: 14px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--l-ink-3); }
+
+/* ---------- catalog ---------- */
+.catalog { z-index: 2; }
+.catalog__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.2vw, 30px); }
+.card { position: relative; display: flex; flex-direction: column; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; isolation: isolate; transition: transform .8s var(--ease), border-color .5s, box-shadow .8s var(--ease); }
+.card::before { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(500px circle at var(--mx, 50%) var(--my, 30%), rgba(255,255,255,.06), transparent 50%); opacity: 0; transition: opacity .5s; }
+.card:hover { transform: translateY(-8px); border-color: var(--line-2); box-shadow: 0 50px 90px -40px rgba(0,0,0,.9); }
+.card:hover::before { opacity: 1; }
+.card__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #000; }
+.card__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 1.2s var(--ease), filter 1.2s var(--ease); will-change: transform; }
+.card:hover .card__media img { transform: scale(1.09) rotate(-1deg); filter: brightness(1.06); }
+.card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,14,16,.25), transparent 30%, transparent 70%, rgba(14,14,16,.7)); pointer-events: none; }
+.card__badge { position: absolute; top: 18px; left: 18px; z-index: 2; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; padding: 8px 12px; border: 1px solid var(--line-2); background: rgba(7,7,8,.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--ink); }
+.card__num { position: absolute; top: 18px; right: 20px; z-index: 2; font-size: 11px; letter-spacing: .3em; color: var(--ink-2); }
+.card__body { padding: 26px 26px 28px; display: flex; flex-direction: column; gap: 14px; flex: 1; position: relative; z-index: 1; }
+.card__title-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.card__title { font-family: var(--display); font-weight: 400; font-size: 30px; line-height: 1.05; }
+.card__family { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.card__desc { color: var(--ink-2); font-size: 14.5px; line-height: 1.65; }
+.card__notes { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 2px; font-size: 12px; letter-spacing: .06em; color: var(--ink-2); }
+.card__notes span::before { content: "· "; color: var(--gold); }
+.card__notes span:first-child::before { content: ""; }
+.card__bottom { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.card__price { font-family: var(--display); font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
+.card__price small { font-family: var(--body); font-size: 15px; color: var(--ink-2); margin-left: 4px; }
+.card__price-note { font-size: 11px; color: var(--ink-3); letter-spacing: .08em; margin-top: 6px; }
+.card__actions { margin-top: 8px; }
+
+.volume { display: inline-flex; padding: 3px; border: 1px solid var(--line-2); position: relative; background: rgba(0,0,0,.3); }
+.volume button { position: relative; z-index: 1; padding: 9px 14px; font-size: 12px; letter-spacing: .08em; color: var(--ink-2); transition: color .3s; -webkit-tap-highlight-color: transparent; }
+.volume button.is-active { color: #0d0c0a; }
+.volume__thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: 0; background: var(--ink); transition: transform .6s var(--ease), width .6s var(--ease); }
+.volume--sm button { padding: 8px 12px; font-size: 11.5px; }
+.price-flip { display: inline-block; }
+.price-flip.is-flip { animation: flip .55s var(--ease); }
+@keyframes flip { 0% { transform: translateY(0); opacity: 1;} 35% { transform: translateY(-10px); opacity: 0;} 36% { transform: translateY(10px); opacity: 0;} 100% { transform: translateY(0); opacity: 1;} }
+
+/* ---------- finder ---------- */
+.finder { z-index: 2; overflow: hidden; background: var(--bg-2); }
+.finder__bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 50% at 15% 20%, rgba(150,140,200,.10), transparent 70%), radial-gradient(50% 50% at 85% 80%, rgba(196,140,70,.12), transparent 70%); }
+.finder__head { text-align: center; display: grid; justify-items: center; margin-bottom: 48px; }
+.finder__head .section__desc { margin-top: 22px; max-width: 520px; }
+.finder__chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 60px; }
+.chip { padding: 15px 26px; border: 1px solid var(--line-2); background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); transition: all .5s var(--ease); -webkit-tap-highlight-color: transparent; }
+.chip:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-2px); }
+.chip.is-active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip--reset { color: var(--ink-3); border-style: dashed; }
+.finder__result { min-height: 100px; }
+.finder__hint { text-align: center; color: var(--ink-3); font-family: var(--display); font-style: italic; font-size: 24px; }
+.finder__count { text-align: center; color: var(--ink-3); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 30px; }
+.finder__count strong { color: var(--gold); font-weight: 500; }
+.finder__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.2vw, 30px); }
+.finder__grid .card { animation: cardIn .9s var(--ease) both; }
+.finder__grid .card:nth-child(2) { animation-delay: .08s; } .finder__grid .card:nth-child(3) { animation-delay: .16s; }
+.finder__grid .card:nth-child(4) { animation-delay: .24s; } .finder__grid .card:nth-child(5) { animation-delay: .32s; } .finder__grid .card:nth-child(6) { animation-delay: .40s; }
+@keyframes cardIn { from { opacity: 0; transform: translateY(30px) scale(.97); filter: blur(6px);} to { opacity: 1; transform: none; filter: blur(0);} }
+
+/* ---------- atelier ---------- */
+.atelier__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 110px); align-items: start; }
+.atelier__photo { position: sticky; top: 110px; aspect-ratio: 3 / 2; }
+.atelier__photo figcaption { margin-top: 14px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--l-ink-3); }
+.atelier__copy .display { margin-bottom: clamp(36px, 4vw, 64px); }
+.features { display: grid; }
+.feature { padding-block: 28px; border-top: 1px solid var(--l-line); display: grid; grid-template-columns: 1fr; gap: 10px; transition: padding-left .6s var(--ease); }
+.feature:last-child { border-bottom: 1px solid var(--l-line); }
+.feature:hover { padding-left: 14px; }
+.feature h3 { font-family: var(--display); font-weight: 400; font-size: 28px; line-height: 1.1; }
+.feature p { color: var(--l-ink-2); font-size: 15px; line-height: 1.7; max-width: 46ch; }
+
+/* ---------- reviews ---------- */
+.reviews { z-index: 2; }
+.reviews__nav { display: flex; gap: 10px; }
+.reviews__track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(360px, 1fr); gap: clamp(16px, 2vw, 28px); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 16px; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scrollbar-width: none; }
+.reviews__track::-webkit-scrollbar { display: none; }
+.review { scroll-snap-align: start; padding: clamp(28px, 3vw, 44px); border: 1px solid var(--line); background: var(--bg-2); display: grid; gap: 26px; align-content: space-between; transition: transform .8s var(--ease), border-color .5s; }
+.review:hover { transform: translateY(-6px); border-color: var(--line-2); }
+.review__text { font-family: var(--display); font-size: 23px; line-height: 1.35; }
+.review footer { display: grid; gap: 4px; font-size: 13px; }
+.review footer strong { font-weight: 500; }
+.review footer span { color: var(--ink-3); letter-spacing: .06em; font-size: 12px; }
+
+/* ---------- cta ---------- */
+.cta { position: relative; z-index: 2; overflow: hidden; text-align: center; padding-block: clamp(140px, 18vw, 260px); background: #000; }
+.cta__bg { position: absolute; inset: -12% 0; z-index: 0; }
+.cta__bg img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transform: translateY(var(--py, 0)) scale(1.06); transition: transform .2s linear; will-change: transform; }
+.cta::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, var(--bg), rgba(7,7,8,.3) 25%, rgba(7,7,8,.35) 75%, var(--bg)); }
+.cta__inner { position: relative; z-index: 2; display: grid; justify-items: center; }
+.cta__title { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 6.4vw, 96px); line-height: 1; letter-spacing: -0.015em; max-width: 16ch; text-wrap: balance; }
+.cta__title em { font-style: italic; color: var(--gold-2); }
+.cta__text { max-width: 560px; color: var(--ink-2); font-size: 17px; line-height: 1.7; margin-top: 30px; }
+.cta__actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 48px; }
+
+/* ---------- footer ---------- */
+.footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padding-top: clamp(56px, 6vw, 88px); padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px)); background: var(--bg); }
+.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.4fr; gap: 40px; padding-bottom: 56px; }
+.footer__brand p { margin-top: 22px; color: var(--ink-2); font-size: 14px; line-height: 1.7; }
+.footer__col { display: grid; gap: 12px; align-content: start; }
+.footer__col h4 { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin-bottom: 8px; }
+.footer__col a { color: var(--ink-2); font-size: 14.5px; width: fit-content; position: relative; transition: color .3s; }
+.footer__col a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .5s var(--ease); }
+.footer__col a:hover { color: var(--ink); }
+.footer__col a:hover::after { transform: scaleX(1); transform-origin: left; }
+.footer__col p { color: var(--ink-2); font-size: 14.5px; line-height: 1.7; }
+.footer__bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line); font-size: 11px; color: var(--ink-3); letter-spacing: .1em; text-transform: uppercase; }
+
+/* ---------- modal ---------- */
+.modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; visibility: hidden; pointer-events: none; }
+.modal.is-open { visibility: visible; pointer-events: auto; }
+.modal__backdrop { position: absolute; inset: 0; background: rgba(4,4,5,.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); opacity: 0; transition: opacity .6s; }
+.modal.is-open .modal__backdrop { opacity: 1; }
+.modal__panel { position: relative; width: 100%; max-width: 580px; max-height: calc(100dvh - 40px); overflow: auto; border: 1px solid var(--line-2); background: linear-gradient(180deg, #16161a, #0c0c0e); box-shadow: 0 60px 120px -30px rgba(0,0,0,.9); padding: clamp(24px, 4vw, 44px); opacity: 0; transform: translateY(30px) scale(.98); transition: opacity .6s var(--ease), transform .7s var(--ease); scrollbar-width: thin; }
+.modal.is-open .modal__panel { opacity: 1; transform: none; }
+.modal__close { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; display: grid; place-items: center; color: var(--ink-2); border: 1px solid var(--line); transition: all .4s; z-index: 2; }
+.modal__close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.modal__close:hover { color: var(--ink); border-color: var(--line-2); transform: rotate(90deg); }
+.modal__product { display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: center; padding-bottom: 26px; margin-bottom: 26px; border-bottom: 1px solid var(--line); }
+.modal__product.is-consult { grid-template-columns: 1fr; }
+.modal__product.is-consult .modal__photo, .modal__product.is-consult .modal__meta { display: none; }
+.modal__photo { width: 132px; aspect-ratio: 4/5; overflow: hidden; background: #000; border: 1px solid var(--line); }
+.modal__photo img { width: 100%; height: 100%; object-fit: cover; }
+.modal__info .label { margin-bottom: 8px; }
+.modal__title { font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1.05; }
+.modal__notes { color: var(--ink-2); font-size: 14px; margin-top: 8px; line-height: 1.6; }
+.modal__meta { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+.modal__price { font-family: var(--display); font-size: 28px; font-variant-numeric: tabular-nums; }
+.modal__price small { font-family: var(--body); font-size: 14px; color: var(--ink-2); }
+.form { display: grid; gap: 14px; }
+.field { position: relative; }
+.field input { width: 100%; height: 60px; padding: 24px 18px 6px; background: rgba(255,255,255,.035); border: 1px solid var(--line-2); color: var(--ink); font: inherit; font-size: 16px; font-weight: 400; outline: none; transition: border-color .3s, background .3s, box-shadow .3s; -webkit-appearance: none; border-radius: 0; }
+.field input:focus { border-color: var(--gold); background: rgba(255,255,255,.05); box-shadow: 0 0 0 4px rgba(205,188,152,.1); }
+.field input.is-invalid { border-color: #c96b66; }
+.field label { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--ink-3); font-size: 15px; pointer-events: none; transition: all .3s var(--ease); }
+.field input:focus + label, .field input:not(:placeholder-shown) + label { top: 10px; transform: none; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.form__error { color: #d98984; font-size: 13px; margin: -4px 0 0; }
+.form__note { font-size: 12px; color: var(--ink-3); line-height: 1.6; text-align: center; margin-top: 6px; }
+.modal__success { display: grid; justify-items: center; text-align: center; gap: 18px; padding: 20px 0 10px; }
+.success__icon { width: 84px; height: 84px; fill: none; stroke: var(--gold); stroke-width: 1.4; }
+.success__circle { stroke-dasharray: 180; stroke-dashoffset: 180; animation: draw 1s var(--ease) .1s forwards; }
+.success__check { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .6s var(--ease) .8s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0;} }
+.modal__success .modal__notes { max-width: 380px; font-size: 15px; }
+
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(36px); filter: blur(4px); transition: opacity 1.1s var(--ease), transform 1.1s var(--ease), filter 1.1s var(--ease); will-change: transform, opacity; }
+.reveal[data-delay="1"] { transition-delay: .12s; } .reveal[data-delay="2"] { transition-delay: .24s; }
+.reveal[data-delay="3"] { transition-delay: .36s; } .reveal[data-delay="4"] { transition-delay: .48s; }
+.reveal.is-in { opacity: 1; transform: none; filter: blur(0); }
+.word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .1em; margin-bottom: -.1em; }
+.word > span { display: inline-block; transform: translateY(110%); transition: transform 1.2s var(--ease); transition-delay: calc(var(--i) * 40ms); }
+.is-in .word > span { transform: translateY(0); }
+
+.cursor-glow { position: fixed; left: 0; top: 0; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, rgba(205,188,152,.07), transparent 60%); pointer-events: none; z-index: 0; will-change: transform; opacity: 0; transition: opacity .6s; }
+.cursor-glow.is-on { opacity: 1; }
+
+/* ========================================================
+   Responsive
+   ======================================================== */
+@media (max-width: 1100px) {
+  .catalog__grid, .finder__grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .nav { position: fixed; inset: 0; z-index: 55; flex-direction: column; justify-content: center; align-items: flex-start; gap: 22px; padding: 110px var(--gutter) 60px; background: rgba(7,7,8,.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); clip-path: circle(0% at calc(100% - 44px) 40px); transition: clip-path .9s var(--ease); pointer-events: none; }
+  .nav.is-open { clip-path: circle(150% at calc(100% - 44px) 40px); pointer-events: auto; }
+  .nav__link { font-family: var(--display); font-size: 42px; text-transform: none; letter-spacing: 0; color: var(--ink); opacity: 0; transform: translateY(20px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+  .nav.is-open .nav__link { opacity: 1; transform: none; }
+  .nav.is-open .nav__link:nth-child(1) { transition-delay: .25s; } .nav.is-open .nav__link:nth-child(2) { transition-delay: .32s; }
+  .nav.is-open .nav__link:nth-child(3) { transition-delay: .39s; } .nav.is-open .nav__link:nth-child(4) { transition-delay: .46s; }
+  .nav__cta { margin-top: 20px; opacity: 0; transition: opacity .6s .55s; }
+  .nav.is-open .nav__cta { opacity: 1; }
+  .burger { display: block; }
+
+  .hero { min-height: auto; padding-top: calc(96px + env(safe-area-inset-top, 0px)); padding-bottom: 80px; }
+  .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero__visual { order: -1; }
+  .hero__photo { width: min(78vw, 380px); }
+  .hero__wordmark { font-size: 32vw; bottom: auto; top: 60px; }
+  .hero__facts { margin-top: 48px; flex-wrap: wrap; gap: 24px 36px; }
+  .scroll-hint { display: none; }
+
+  .section__head { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .manifest__body { grid-template-columns: 1fr; }
+  .manifest__text { position: static; }
+  .pic--a { grid-column: 1 / 8; } .pic--b { grid-column: 8 / 13; margin-top: 60px; } .pic--c { grid-column: 2 / 12; margin-top: 0; aspect-ratio: 16/10; }
+  .atelier__grid { grid-template-columns: 1fr; }
+  .atelier__photo { position: static; }
+  .reviews__track { grid-auto-columns: minmax(300px, 82%); }
+}
+@media (max-width: 600px) {
+  .header__inner { height: 68px; }
+  .logo { font-size: 18px; }
+  .hero__title { font-size: clamp(52px, 15.5vw, 78px); }
+  .hero__caption { flex-wrap: wrap; gap: 6px 14px; }
+  .hero__actions { gap: 20px; }
+  .btn--lg { padding: 20px 30px; }
+  .catalog__grid, .finder__grid { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+  .modal { padding: 0; align-items: end; }
+  .modal__panel { max-width: none; max-height: 92dvh; padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateY(60px); }
+  .modal__product { grid-template-columns: 100px 1fr; gap: 16px; }
+  .modal__photo { width: 100px; }
+  .modal__title { font-size: 28px; }
+  .review__text { font-size: 20px; }
+  .reviews__track { grid-auto-columns: 86%; }
+  .cta__actions .btn { width: 100%; justify-content: center; }
+  .marquee__track { font-size: 18px; }
+  .fog { opacity: 0 !important; }
+  .pic--a { grid-column: 1 / 9; } .pic--b { grid-column: 7 / 13; margin-top: 120px; } .pic--c { grid-column: 1 / 13; }
+}
+@media (hover: none) { .cursor-glow { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+  .line > span, .word > span { transform: none; }
+  .hero__label, .hero__lead, .hero__actions, .hero__facts, .hero__visual, .hero__caption { opacity: 1; transform: none; }
+}
+
+</style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23070708%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22Bodoni%20Moda%2CDidot%2CGeorgia%2Cserif%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23cdbc98%22%3EK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__word" aria-hidden="true">
+      <span>K</span><span>L</span><span>E</span><span>M</span><span>N</span><span>I</span>
+    </div>
+    <div class="preloader__line"><span></span></div>
+    <p class="preloader__sub">Studio de parfum · est. 2024</p>
+  </div>
+
+  <canvas class="fog" id="fog" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="wrap header__inner">
+      <a href="#top" class="logo" aria-label="KLEMNI AI — на главную">
+        <span class="logo__word">KLEMNI</span><sup class="logo__ai">AI</sup>
+      </a>
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#catalog" class="nav__link">Ароматы</a>
+        <a href="#finder" class="nav__link">Подбор</a>
+        <a href="#atelier" class="nav__link">Ателье</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#catalog" class="btn btn--line btn--sm nav__cta"><span>Выбрать аромат</span></a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="hero__glow" data-parallax="0.12" aria-hidden="true"></div>
+      <div class="hero__wordmark" aria-hidden="true" data-parallax="0.25">KLEMNI</div>
+
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="label hero__label">Студия авторской парфюмерии · Москва</p>
+          <h1 class="hero__title">
+            <span class="line"><span>Остаётся,</span></span>
+            <span class="line"><span>когда вы</span></span>
+            <span class="line"><span><em>уже ушли</em></span></span>
+          </h1>
+          <p class="hero__lead">Шесть ароматов Extrait-концентрации, собранных парфюмером и алгоритмом. Малые партии, толстое стекло, стойкость до 72 часов.</p>
+          <div class="hero__actions">
+            <a href="#catalog" class="btn btn--solid btn--lg" data-magnetic>
+              <span>Выбрать аромат</span>
+              <i class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></i>
+            </a>
+            <a href="#finder" class="link">Подобрать за 30 секунд</a>
+          </div>
+          <dl class="hero__facts">
+            <div><dt>72 ч</dt><dd>на коже</dd></div>
+            <div><dt>28 %</dt><dd>концентрация</dd></div>
+            <div><dt>240</dt><dd>флаконов в партии</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__visual" id="heroVisual">
+          <figure class="hero__photo" id="heroPhoto">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_a25764b9-a61a-4324-be83-f9c515de7739_min.webp"
+                 width="1400" height="1867" alt="Флакон KLEMNI AI Nº 01 Ambre Solaire" fetchpriority="high" decoding="async">
+            <canvas class="spray" id="spray" aria-hidden="true"></canvas>
+          </figure>
+          <figcaption class="hero__caption" data-parallax="-0.04">
+            <span class="hero__caption-num">Nº 01</span>
+            <span class="hero__caption-name">Ambre Solaire</span>
+            <span class="hero__caption-notes">амбра · бергамот · сандал</span>
+          </figcaption>
+        </div>
+      </div>
+
+      <a href="#manifest" class="scroll-hint" aria-label="Прокрутить вниз"><span></span>Scroll</a>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Extrait de Parfum</span><i></i><span>Ручная сборка</span><i></i><span>Стойкость до 72 часов</span><i></i><span>Натуральные абсолюты</span><i></i><span>Партии по 240 флаконов</span><i></i>
+        <span>Extrait de Parfum</span><i></i><span>Ручная сборка</span><i></i><span>Стойкость до 72 часов</span><i></i><span>Натуральные абсолюты</span><i></i><span>Партии по 240 флаконов</span><i></i>
+      </div>
+    </div>
+
+    <!-- ================= MANIFEST (light) ================= -->
+    <section class="manifest section light" id="manifest">
+      <div class="wrap">
+        <div class="manifest__head">
+          <p class="label reveal">Манифест</p>
+          <h2 class="display reveal" data-split>Мы не создаём запахи. Мы собираем воспоминания, которых у вас ещё не было.</h2>
+        </div>
+        <div class="manifest__body">
+          <div class="manifest__text">
+            <p class="reveal" data-delay="1">Каждая композиция KLEMNI AI рождается из тысяч сочетаний, которые алгоритм предлагает парфюмеру. Финальный аккорд всегда ставит человек — на коже, в тишине, вручную.</p>
+            <p class="reveal" data-delay="2">Мы работаем партиями по 240 флаконов, выдерживаем каждую композицию не меньше 40 дней и разливаем в толстое стекло с каменным колпаком.</p>
+            <a href="#atelier" class="link link--dark reveal" data-delay="3">Как устроено ателье</a>
+          </div>
+          <div class="manifest__gallery">
+            <figure class="pic pic--a reveal" data-parallax-img="0.10">
+              <div class="pic__frame"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_5865186f-cb1c-436b-b5ed-26b6991021e6_min.webp" width="1400" height="1738" alt="Смола амбры и лабданум" loading="lazy" decoding="async"></div>
+              <figcaption>Амбра и лабданум — Эс-Сувейра, Марокко</figcaption>
+            </figure>
+            <figure class="pic pic--b reveal" data-delay="1" data-parallax-img="-0.07">
+              <div class="pic__frame"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_f045958a-ee6d-4501-91dc-c9eaba29913f_min.webp" width="1400" height="1738" alt="Ирис паллида и корневища" loading="lazy" decoding="async"></div>
+              <figcaption>Ирис паллида — Сан-Поло, Тоскана</figcaption>
+            </figure>
+            <figure class="pic pic--c reveal" data-delay="2" data-parallax-img="0.05">
+              <div class="pic__frame"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_f9350768-deec-4978-ba74-eda0a29a9b15_min.webp" width="1400" height="1738" alt="Корни ветивера и дым" loading="lazy" decoding="async"></div>
+              <figcaption>Ветивер — Ле-Ке, Гаити</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATALOG ================= -->
+    <section class="catalog section" id="catalog">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="label reveal">Коллекция</p>
+            <h2 class="display reveal">Шесть ароматов</h2>
+          </div>
+          <p class="section__desc reveal" data-delay="1">Один флакон, шесть характеров. Каждый — в трёх объёмах. Выберите свой или начните с подбора.</p>
+        </div>
+        <div class="catalog__grid" id="catalogGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= FINDER ================= -->
+    <section class="finder section" id="finder">
+      <div class="finder__bg" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="finder__head">
+          <p class="label reveal">Подбор</p>
+          <h2 class="display reveal">Найди свой аромат</h2>
+          <p class="section__desc reveal" data-delay="1">Выберите одно или несколько настроений. Мы покажем, что подойдёт именно вам.</p>
+        </div>
+        <div class="finder__chips reveal" data-delay="2" role="group" aria-label="Настроение аромата">
+          <button class="chip" data-mood="fresh" aria-pressed="false">Свежий</button>
+          <button class="chip" data-mood="sweet" aria-pressed="false">Сладкий</button>
+          <button class="chip" data-mood="woody" aria-pressed="false">Древесный</button>
+          <button class="chip" data-mood="evening" aria-pressed="false">Вечерний</button>
+          <button class="chip" data-mood="unisex" aria-pressed="false">Унисекс</button>
+          <button class="chip chip--reset" id="chipReset" hidden>Сбросить</button>
+        </div>
+        <div class="finder__result" id="finderResult">
+          <p class="finder__hint reveal" data-delay="3">Выберите настроение — подходящие ароматы появятся здесь.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ATELIER (light) ================= -->
+    <section class="atelier section light" id="atelier">
+      <div class="wrap atelier__grid">
+        <figure class="atelier__photo reveal" data-parallax-img="0.08">
+          <div class="pic__frame"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_937c7aee-a84d-45b4-923e-4996a74ba067_min.webp" width="1400" height="939" alt="Ателье KLEMNI AI: стол парфюмера с флаконами и пипетками" loading="lazy" decoding="async"></div>
+          <figcaption>Ателье на Большой Никитской. Стол парфюмера, 19:40</figcaption>
+        </figure>
+        <div class="atelier__copy">
+          <p class="label reveal">Ателье</p>
+          <h2 class="display reveal">Почему это пахнет дорого</h2>
+          <ul class="features">
+            <li class="feature reveal" data-delay="1">
+              <h3>Концентрация Extrait</h3>
+              <p>До 28 % парфюмерной композиции. Аромат живёт на коже до 72 часов и раскрывается тремя актами, а не одним.</p>
+            </li>
+            <li class="feature reveal" data-delay="2">
+              <h3>Сырьё с адресом</h3>
+              <p>Амбра из Марокко, ирис из Тосканы, ветивер с Гаити. Мы знаем ферму и год урожая каждого абсолюта.</p>
+            </li>
+            <li class="feature reveal" data-delay="3">
+              <h3>Ручная сборка</h3>
+              <p>Каждый флакон наполняется, закрывается и подписывается вручную. Номер партии выгравирован на дне.</p>
+            </li>
+            <li class="feature reveal" data-delay="4">
+              <h3>Алгоритм как соавтор</h3>
+              <p>Модель перебирает тысячи сочетаний нот и предлагает парфюмеру неожиданные аккорды. Последнее слово всегда за носом.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="reviews section" id="reviews">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="label reveal">Отзывы</p>
+            <h2 class="display reveal">Что говорят</h2>
+          </div>
+          <div class="reviews__nav reveal" data-delay="1">
+            <button class="round" id="revPrev" aria-label="Предыдущий отзыв"><svg viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button class="round" id="revNext" aria-label="Следующий отзыв"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="reviews__track" id="reviewsTrack">
+          <article class="review reveal">
+            <p class="review__text">«Ambre Solaire — первый аромат, на который мне сделал комплимент незнакомый человек в метро. Держится с утра до вечера, вечером пахнет ещё лучше».</p>
+            <footer><strong>Марина К.</strong><span>Ambre Solaire · 50 мл</span></footer>
+          </article>
+          <article class="review reveal" data-delay="1">
+            <p class="review__text">«Прошёл подбор на сайте, выбрал Vétiver Noir. Попал в точку: сухой, дымный, не приторный. Первый раз в жизни купил парфюм с первой попытки».</p>
+            <footer><strong>Дмитрий Р.</strong><span>Vétiver Noir · 100 мл</span></footer>
+          </article>
+          <article class="review reveal" data-delay="2">
+            <p class="review__text">«Флакон — отдельное произведение. Толстое стекло, тяжёлый колпак, номер партии на дне. Подарила маме Iris Pâle, теперь она не пользуется ничем другим».</p>
+            <footer><strong>Алина С.</strong><span>Iris Pâle · 30 мл</span></footer>
+          </article>
+          <article class="review reveal" data-delay="3">
+            <p class="review__text">«Заказал в пятницу вечером, в субботу перезвонили, в воскресенье привезли. Nuit Figue стал моим вечерним ритуалом».</p>
+            <footer><strong>Игорь В.</strong><span>Nuit Figue · 50 мл</span></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta" id="cta">
+      <div class="cta__bg" data-parallax-img="0.12" aria-hidden="true">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_14d97907-15c3-4367-a8c4-986c0260bcd9_min.webp" width="1600" height="893" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="wrap cta__inner">
+        <p class="label reveal">Начните с себя</p>
+        <h2 class="cta__title reveal" data-delay="1">Аромат — это подпись, которую вы <em>оставляете</em> в комнате</h2>
+        <p class="cta__text reveal" data-delay="2">Выберите аромат сейчас или оставьте контакт. Парфюмер студии перезвонит и поможет с выбором. Пробники к каждому заказу бесплатно.</p>
+        <div class="cta__actions reveal" data-delay="3">
+          <a href="#catalog" class="btn btn--solid btn--lg" data-magnetic><span>Выбрать аромат</span><i class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></i></a>
+          <button class="btn btn--line btn--lg" id="ctaConsult"><span>Консультация парфюмера</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="logo"><span class="logo__word">KLEMNI</span><sup class="logo__ai">AI</sup></a>
+        <p>Студия авторской парфюмерии.<br>Москва, Большая Никитская, 12</p>
+      </div>
+      <div class="footer__col">
+        <h4>Навигация</h4>
+        <a href="#catalog">Ароматы</a><a href="#finder">Подбор</a><a href="#atelier">Ателье</a><a href="#reviews">Отзывы</a>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+74950000000">+7 (495) 000-00-00</a><a href="mailto:hello@klemni.ai">hello@klemni.ai</a><a href="#">Telegram</a><a href="#">Instagram</a>
+      </div>
+      <div class="footer__col footer__col--wide">
+        <h4>Ателье</h4>
+        <p>Ежедневно 11:00 — 21:00. Приходите нюхать: у нас всегда есть кофе и свежие блоттеры.</p>
+      </div>
+    </div>
+    <div class="wrap footer__bottom"><span>© 2026 KLEMNI AI</span><span>Сделано с любовью к запахам</span></div>
+  </footer>
+
+  <!-- ================= ORDER MODAL ================= -->
+  <div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="modal__body" id="modalBody">
+        <div class="modal__product" id="modalProduct">
+          <div class="modal__photo" id="modalPhoto"></div>
+          <div class="modal__info">
+            <p class="label" id="modalEyebrow">Ваш выбор</p>
+            <h3 class="modal__title" id="modalTitle">Ambre Solaire</h3>
+            <p class="modal__notes" id="modalNotes"></p>
+            <div class="modal__meta">
+              <div class="volume volume--sm" id="modalVolume" role="group" aria-label="Объём"></div>
+              <span class="modal__price" id="modalPrice"></span>
+            </div>
+          </div>
+        </div>
+        <form class="form" id="orderForm" novalidate>
+          <div class="field"><input type="text" id="fName" name="name" placeholder=" " autocomplete="name" required><label for="fName">Ваше имя</label></div>
+          <div class="field"><input type="tel" id="fPhone" name="phone" placeholder=" " autocomplete="tel" inputmode="tel" required><label for="fPhone">Телефон</label></div>
+          <p class="form__error" id="formError" hidden></p>
+          <button type="submit" class="btn btn--solid btn--full" id="submitBtn"><span>Заказать</span><i class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></i></button>
+          <p class="form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Перезвоним в течение 15 минут в рабочее время.</p>
+        </form>
+      </div>
+      <div class="modal__success" id="modalSuccess" hidden>
+        <svg class="success__icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" class="success__circle"/><path d="M20 33l8 8 16-17" class="success__check"/></svg>
+        <h3 class="modal__title">Спасибо, <span id="successName"></span></h3>
+        <p class="modal__notes" id="successText"></p>
+        <button class="btn btn--line" data-close><span>Вернуться на сайт</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+/* =========================================================
+   KLEMNI AI — main.js
+   ========================================================= */
+(() => {
+  'use strict';
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  const fmt = (n) => n.toLocaleString('ru-RU');
+
+  /* Images are generated in Higgsfield (Nano Banana Pro) and served from its public CDN. */
+  const IMG = {
+    'hero': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_a25764b9-a61a-4324-be83-f9c515de7739_min.webp',
+    'hero-dark': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122928_272ae581-4497-45e1-a370-53512aaab8c2_min.webp',
+    'amber': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_5865186f-cb1c-436b-b5ed-26b6991021e6_min.webp',
+    'iris': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_f045958a-ee6d-4501-91dc-c9eaba29913f_min.webp',
+    'vetiver': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_f9350768-deec-4978-ba74-eda0a29a9b15_min.webp',
+    'atelier': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_937c7aee-a84d-45b4-923e-4996a74ba067_min.webp',
+    'spray': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_14d97907-15c3-4367-a8c4-986c0260bcd9_min.webp',
+    'vetiver-noir': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_49b64224-6396-4306-8363-84d3f80e93c5_min.webp',
+    'iris-pale': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_a4235fcf-d93f-4493-a121-b3a88d5b1e5d_min.webp',
+    'citrus-marin': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_d3a89d4c-9c34-42fd-a4db-7b2d173f0aae_min.webp',
+    'nuit-figue': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124740_fec3e178-c33c-412a-bd63-691bf023fc35_min.webp',
+    'bois-de-the': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_d4d9f1b4-253f-4ee0-ba2c-b07ccbee7694_min.webp',
+  };
+  const img = (name) => IMG[name];
+
+  /* ---------------- Data ---------------- */
+  const FRAGRANCES = [
+    { id: 'ambre-solaire', num: '01', name: 'Ambre Solaire', family: 'Амбровый',
+      desc: 'Тёплый солнечный аккорд амбры и бергамота, который к вечеру раскрывается в дымный сандал.',
+      notes: ['амбра', 'бергамот', 'сандал', 'ваниль'], moods: ['sweet', 'evening', 'unisex'],
+      prices: { 30: 6900, 50: 9800, 100: 15900 }, image: 'hero', badge: 'Бестселлер' },
+    { id: 'vetiver-noir', num: '02', name: 'Vétiver Noir', family: 'Древесный',
+      desc: 'Сухой, дымный ветивер с Гаити, чёрный перец и кожа. Строгий, как хорошо сшитый костюм.',
+      notes: ['ветивер', 'чёрный перец', 'кожа', 'кедр'], moods: ['woody', 'evening', 'unisex'],
+      prices: { 30: 7200, 50: 10400, 100: 16800 }, image: 'vetiver-noir' },
+    { id: 'iris-pale', num: '03', name: 'Iris Pâle', family: 'Пудровый',
+      desc: 'Холодный тосканский ирис, фиалка и белый мускус. Аромат чистых простыней и утреннего света.',
+      notes: ['ирис', 'фиалка', 'белый мускус', 'рисовая пудра'], moods: ['fresh', 'sweet', 'unisex'],
+      prices: { 30: 7800, 50: 11200, 100: 17900 }, image: 'iris-pale', badge: 'Новинка' },
+    { id: 'citrus-marin', num: '04', name: 'Citrus Marin', family: 'Цитрусовый',
+      desc: 'Сицилийский лимон, морская соль и зелёный чай. Прозрачный, как утро на побережье.',
+      notes: ['лимон', 'морская соль', 'зелёный чай', 'нероли'], moods: ['fresh', 'unisex'],
+      prices: { 30: 6400, 50: 9200, 100: 14900 }, image: 'citrus-marin' },
+    { id: 'nuit-figue', num: '05', name: 'Nuit Figue', family: 'Фруктово-древесный',
+      desc: 'Спелая фига, кокосовое молоко и тёмный кедр. Сладость без грамма приторности.',
+      notes: ['фига', 'кокос', 'кедр', 'бобы тонка'], moods: ['sweet', 'woody', 'evening'],
+      prices: { 30: 7400, 50: 10800, 100: 17200 }, image: 'nuit-figue' },
+    { id: 'bois-de-the', num: '06', name: 'Bois de Thé', family: 'Древесно-чайный',
+      desc: 'Копчёный чай лапсанг, гваяковое дерево и дым. Для тех, кто любит тишину и осень.',
+      notes: ['чай лапсанг', 'гваяк', 'дым', 'бензоин'], moods: ['woody', 'fresh', 'unisex'],
+      prices: { 30: 7000, 50: 10200, 100: 16400 }, image: 'bois-de-the' },
+  ];
+  const VOLUMES = [30, 50, 100];
+  const MOOD_LABELS = { fresh: 'свежий', sweet: 'сладкий', woody: 'древесный', evening: 'вечерний', unisex: 'унисекс' };
+
+  /* ---------------- Cards ---------------- */
+  function pictureHTML(f) {
+    return `<img src="${img(f.image)}" alt="${f.name} — флакон KLEMNI AI" loading="lazy" decoding="async">`;
+  }
+
+  function cardHTML(f) {
+    return `
+<article class="card reveal" data-id="${f.id}">
+  <div class="card__media">
+    ${f.badge ? `<span class="card__badge">${f.badge}</span>` : ''}
+    <span class="card__num">Nº ${f.num}</span>
+    ${pictureHTML(f)}
+  </div>
+  <div class="card__body">
+    <div class="card__title-row"><h3 class="card__title">${f.name}</h3><span class="card__family">${f.family}</span></div>
+    <p class="card__desc">${f.desc}</p>
+    <div class="card__notes">${f.notes.map(n => `<span>${n}</span>`).join('')}</div>
+    <div class="card__bottom">
+      <div>
+        <div class="card__price"><span class="price-flip" data-price>${fmt(f.prices[50])}</span><small>₽</small></div>
+        <div class="card__price-note" data-price-note>50 мл · Extrait de Parfum</div>
+      </div>
+      <div class="volume" role="group" aria-label="Объём">
+        <span class="volume__thumb"></span>
+        ${VOLUMES.map(v => `<button type="button" data-vol="${v}" class="${v === 50 ? 'is-active' : ''}" aria-pressed="${v === 50}">${v} мл</button>`).join('')}
+      </div>
+    </div>
+    <div class="card__actions">
+      <button type="button" class="btn btn--solid btn--full" data-order><span>Заказать</span><i class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></i></button>
+    </div>
+  </div>
+</article>`;
+  }
+
+  function setupVolume(volEl, onChange) {
+    const thumb = $('.volume__thumb', volEl);
+    const btns = $$('button', volEl);
+    const move = (btn) => { thumb.style.width = `${btn.offsetWidth}px`; thumb.style.transform = `translateX(${btn.offsetLeft - 3}px)`; };
+    const active = btns.find(b => b.classList.contains('is-active')) || btns[0];
+    requestAnimationFrame(() => move(active));
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => { x.classList.remove('is-active'); x.setAttribute('aria-pressed', 'false'); });
+      b.classList.add('is-active'); b.setAttribute('aria-pressed', 'true');
+      move(b); onChange(Number(b.dataset.vol));
+    }));
+    new ResizeObserver(() => { const a = btns.find(x => x.classList.contains('is-active')); if (a) move(a); }).observe(volEl);
+  }
+
+  function bindCard(card) {
+    const f = FRAGRANCES.find(x => x.id === card.dataset.id);
+    const priceEl = $('[data-price]', card);
+    const noteEl = $('[data-price-note]', card);
+    let vol = 50;
+    setupVolume($('.volume', card), (v) => {
+      vol = v;
+      priceEl.classList.remove('is-flip'); void priceEl.offsetWidth; priceEl.classList.add('is-flip');
+      setTimeout(() => { priceEl.textContent = fmt(f.prices[v]); }, 190);
+      noteEl.textContent = `${v} мл · Extrait de Parfum`;
+    });
+    $('[data-order]', card).addEventListener('click', () => openModal(f, vol));
+    if (!isTouch) card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`); card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  }
+
+  function renderCards(container, list) {
+    container.innerHTML = list.map(cardHTML).join('');
+    $$('.card', container).forEach(bindCard);
+    observeReveals(container);
+  }
+
+  /* ---------------- Reveal ---------------- */
+  let revealIO;
+  function observeReveals(root = document) {
+    if (!revealIO) revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); revealIO.unobserve(en.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    $$('.reveal', root).forEach(el => {
+      if (el.hasAttribute('data-split') && !el.dataset.splitDone) splitWords(el);
+      revealIO.observe(el);
+    });
+  }
+  function splitWords(el) {
+    el.innerHTML = el.textContent.trim().split(/\s+/).map((w, i) => `<span class="word"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    el.dataset.splitDone = '1';
+  }
+
+  /* ---------------- Preloader ---------------- */
+  function preloader() {
+    const pre = $('#preloader');
+    let finished = false;
+    const done = () => {
+      if (finished) return; finished = true;
+      pre.classList.add('is-done');
+      document.body.classList.add('is-loaded');
+      setTimeout(() => $('#fog').classList.add('is-on'), 900);
+    };
+    const heroImg = $('#heroPhoto img');
+    const imgReady = heroImg && !heroImg.complete ? new Promise(r => { heroImg.onload = r; heroImg.onerror = r; }) : Promise.resolve();
+    const minTime = new Promise(r => setTimeout(r, reduceMotion ? 0 : 1900));
+    const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+    Promise.all([minTime, fonts, imgReady]).then(done);
+    setTimeout(done, 5000);
+  }
+
+  /* ---------------- Header ---------------- */
+  function header() {
+    const h = $('#header'), burger = $('#burger'), nav = $('#nav');
+    let lastY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      h.classList.toggle('is-scrolled', y > 30);
+      if (y > 400 && y > lastY + 6 && !nav.classList.contains('is-open')) h.classList.add('is-hidden');
+      else if (y < lastY - 6 || y < 120) h.classList.remove('is-hidden');
+      lastY = y;
+    }, { passive: true });
+    const toggle = (open) => {
+      const isOpen = open ?? !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', isOpen); burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+      document.body.classList.toggle('is-locked', isOpen);
+    };
+    burger.addEventListener('click', () => toggle());
+    $$('a', nav).forEach(a => a.addEventListener('click', () => toggle(false)));
+  }
+
+  /* ---------------- Scroll choreography ---------------- */
+  function scrollFX() {
+    const photo = $('#heroPhoto'), visual = $('#heroVisual'), hero = $('#hero');
+    const parallaxEls = $$('[data-parallax]'), imgEls = $$('[data-parallax-img]');
+    let ticking = false, mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+    if (!isTouch && !reduceMotion) window.addEventListener('pointermove', (e) => {
+      mouseX = e.clientX / window.innerWidth - .5; mouseY = e.clientY / window.innerHeight - .5;
+    }, { passive: true });
+
+    const update = () => {
+      ticking = false;
+      const y = window.scrollY, vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, y / (hero.offsetHeight * 0.9)));
+
+      if (!reduceMotion) {
+        curX += (mouseX - curX) * .06; curY += (mouseY - curY) * .06;
+        const rz = -2 + p * 16, ry = curX * 10 + p * 18, rx = -curY * 6 - p * 4;
+        photo.style.transform = `translate3d(${p * -80}px, ${p * vh * .45}px, 0) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${1 - p * .12})`;
+        visual.style.opacity = String(1 - Math.max(0, p - .6) / .4);
+        parallaxEls.forEach(el => {
+          const k = parseFloat(el.dataset.parallax);
+          if (hero.contains(el)) el.style.transform = `translate3d(${el.classList.contains('hero__wordmark') ? '-50%' : '0'}, ${y * k}px, 0)`;
+          else {
+            const r = el.getBoundingClientRect(); if (r.bottom < -vh || r.top > vh * 2) return;
+            el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - vh / 2) * k * 2}px, 0)`;
+          }
+        });
+      }
+      imgEls.forEach(el => {
+        const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
+        const off = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallaxImg);
+        const target = $('img', el);
+        if (target) target.style.setProperty('--py', `${off}px`);
+      });
+      spray.onScroll(y, p);
+    };
+    const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    if (!isTouch && !reduceMotion) { const loop = () => { if (window.scrollY < window.innerHeight * 1.2) update(); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+    update();
+  }
+
+  /* ---------------- Spray particles ---------------- */
+  const spray = (() => {
+    const canvas = $('#spray'), ctx = canvas.getContext('2d'), photo = $('#heroPhoto');
+    let W = 0, H = 0, particles = [], lastY = 0, lastBurst = 0, running = false;
+    const resize = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1); const r = canvas.getBoundingClientRect();
+      W = r.width; H = r.height; canvas.width = W * dpr; canvas.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    window.addEventListener('resize', resize); setTimeout(resize, 120);
+    // nozzle ≈ top of the cap: 50% across, 17% down the photo
+    const nozzle = () => { const pr = photo.getBoundingClientRect(), cr = canvas.getBoundingClientRect(); return { x: pr.left + pr.width * .5 - cr.left, y: pr.top + pr.height * .17 - cr.top }; };
+    const burst = (count, power = 1) => {
+      const { x, y } = nozzle();
+      const m = photo.style.transform.match(/rotateZ\(([-\d.]+)deg\)/); const rz = m ? parseFloat(m[1]) : 0;
+      const base = (-35 + rz) * Math.PI / 180;
+      for (let i = 0; i < count; i++) {
+        const a = base + (Math.random() - .5) * .75, sp = (2 + Math.random() * 5) * power;
+        particles.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, r: .6 + Math.random() * 2.2, life: 1, decay: .008 + Math.random() * .014, hue: 38 + Math.random() * 10 });
+      }
+      if (!running) { running = true; requestAnimationFrame(tick); }
+    };
+    const tick = () => {
+      ctx.clearRect(0, 0, W, H);
+      particles = particles.filter(p => p.life > 0);
+      for (const p of particles) {
+        p.x += p.vx; p.y += p.vy; p.vx *= .975; p.vy = p.vy * .975 - .012; p.vx += (Math.random() - .5) * .12; p.life -= p.decay; p.r += .05;
+        const a = Math.max(0, p.life) * .5; const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
+        g.addColorStop(0, `hsla(${p.hue},60%,88%,${a})`); g.addColorStop(1, `hsla(${p.hue},60%,88%,0)`);
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2); ctx.fill();
+      }
+      if (particles.length) requestAnimationFrame(tick); else running = false;
+    };
+    if (!reduceMotion) {
+      setInterval(() => { if (window.scrollY < window.innerHeight * .6 && document.body.classList.contains('is-loaded')) burst(14, .8); }, 3400);
+      setTimeout(() => burst(44, 1.2), 2600);
+    }
+    return { onScroll(y, p) {
+      if (reduceMotion || p >= 1) return;
+      const dy = Math.abs(y - lastY); lastY = y; const now = performance.now();
+      if (dy > 4 && now - lastBurst > 70) { lastBurst = now; burst(Math.min(30, 6 + dy * .4), 1 + Math.min(1, dy / 80)); }
+    } };
+  })();
+
+  /* ---------------- Fog ---------------- */
+  function fog() {
+    const canvas = $('#fog'); if (reduceMotion || window.innerWidth < 600) return;
+    const ctx = canvas.getContext('2d'); let W, H, t = 0, lastScroll = window.scrollY, drift = 0; const clouds = [];
+    const resize = () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; };
+    resize(); window.addEventListener('resize', resize);
+    for (let i = 0; i < 9; i++) clouds.push({ x: Math.random() * W, y: Math.random() * H, r: 220 + Math.random() * 340, vx: (.15 + Math.random() * .3) * (Math.random() > .5 ? 1 : -1), vy: (Math.random() - .5) * .12, a: .03 + Math.random() * .045, hue: Math.random() > .5 ? '205,188,152' : '170,165,210' });
+    const draw = () => {
+      t += .005; const sy = window.scrollY; drift += ((sy - lastScroll) * .9 - drift) * .1; lastScroll = sy;
+      ctx.clearRect(0, 0, W, H); ctx.globalCompositeOperation = 'screen';
+      for (const c of clouds) {
+        c.x += c.vx + drift * .02 * (c.vx > 0 ? 1 : -1); c.y += c.vy + Math.sin(t + c.r) * .15;
+        if (c.x < -c.r) c.x = W + c.r; if (c.x > W + c.r) c.x = -c.r; if (c.y < -c.r) c.y = H + c.r; if (c.y > H + c.r) c.y = -c.r;
+        const g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.r); const a = c.a * (.8 + Math.abs(Math.sin(t * 1.7 + c.r)) * .4);
+        g.addColorStop(0, `rgba(${c.hue},${a})`); g.addColorStop(1, `rgba(${c.hue},0)`);
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2); ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    };
+    draw();
+  }
+
+  /* ---------------- Cursor & magnetic ---------------- */
+  function cursor() {
+    if (isTouch || reduceMotion) return;
+    const glow = document.createElement('div'); glow.className = 'cursor-glow'; document.body.appendChild(glow);
+    let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
+    window.addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; glow.classList.add('is-on'); }, { passive: true });
+    const loop = () => { cx += (x - cx) * .1; cy += (y - cy) * .1; glow.style.transform = `translate(${cx - 230}px, ${cy - 230}px)`; requestAnimationFrame(loop); }; loop();
+    $$('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('pointermove', (e) => { const r = btn.getBoundingClientRect(); btn.style.transform = `translate(${(e.clientX - (r.left + r.width / 2)) * .18}px, ${(e.clientY - (r.top + r.height / 2)) * .28}px)`; });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  /* ---------------- Finder ---------------- */
+  function finder() {
+    const chips = $$('.chip[data-mood]'), reset = $('#chipReset'), result = $('#finderResult'), active = new Set();
+    const render = () => {
+      reset.hidden = active.size === 0;
+      if (!active.size) { result.innerHTML = `<p class="finder__hint reveal is-in">Выберите настроение — подходящие ароматы появятся здесь.</p>`; return; }
+      const list = FRAGRANCES.filter(f => [...active].every(m => f.moods.includes(m)));
+      const labels = [...active].map(m => MOOD_LABELS[m]).join(' + ');
+      if (!list.length) { result.innerHTML = `<p class="finder__hint reveal is-in">Такое сочетание пока в работе. Уберите один из фильтров или <a href="#cta" style="color:var(--gold)">напишите парфюмеру</a>.</p>`; return; }
+      result.innerHTML = `<p class="finder__count">Найдено <strong>${list.length}</strong> · ${labels}</p><div class="finder__grid"></div>`;
+      const grid = $('.finder__grid', result); grid.innerHTML = list.map(cardHTML).join('');
+      $$('.card', grid).forEach(c => { c.classList.remove('reveal'); bindCard(c); });
+    };
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      const m = ch.dataset.mood;
+      if (active.has(m)) { active.delete(m); ch.classList.remove('is-active'); } else { active.add(m); ch.classList.add('is-active'); }
+      ch.setAttribute('aria-pressed', String(active.has(m))); render();
+    }));
+    reset.addEventListener('click', () => { active.clear(); chips.forEach(c => { c.classList.remove('is-active'); c.setAttribute('aria-pressed', 'false'); }); render(); });
+  }
+
+  /* ---------------- Reviews ---------------- */
+  function reviews() {
+    const track = $('#reviewsTrack'); const step = () => ($('.review', track)?.offsetWidth || 360) + 24;
+    $('#revPrev').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    $('#revNext').addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  }
+
+  /* ---------------- Modal ---------------- */
+  const modal = $('#orderModal'); const state = { f: null, vol: 50, consult: false }; let lastFocus = null;
+  function openModal(f, vol = 50, consult = false) {
+    lastFocus = document.activeElement; state.f = f; state.vol = vol; state.consult = consult;
+    $('#modalBody').hidden = false; $('#modalSuccess').hidden = true; $('#formError').hidden = true; $('#orderForm').reset();
+    $$('.field input', modal).forEach(i => i.classList.remove('is-invalid'));
+    $('#modalProduct').classList.toggle('is-consult', consult);
+    $('#submitBtn > span').textContent = consult ? 'Отправить' : 'Заказать';
+    if (consult) {
+      $('#modalEyebrow').textContent = 'Консультация'; $('#modalTitle').textContent = 'Подобрать аромат вместе';
+      $('#modalNotes').textContent = 'Оставьте контакт: парфюмер студии перезвонит, задаст несколько вопросов и предложит 2–3 аромата под вас. Пробники отправим бесплатно.';
+    } else {
+      $('#modalPhoto').innerHTML = `<img src="${img(f.image)}" alt="${f.name}">`;
+      $('#modalEyebrow').textContent = `Nº ${f.num} · ${f.family}`; $('#modalTitle').textContent = f.name; $('#modalNotes').textContent = f.notes.join(' · ');
+      const volEl = $('#modalVolume');
+      volEl.innerHTML = `<span class="volume__thumb"></span>` + VOLUMES.map(v => `<button type="button" data-vol="${v}" class="${v === vol ? 'is-active' : ''}" aria-pressed="${v === vol}">${v} мл</button>`).join('');
+      setupVolume(volEl, (v) => { state.vol = v; updatePrice(); }); updatePrice();
+    }
+    modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('is-locked');
+    setTimeout(() => $('#fName').focus({ preventScroll: true }), 350);
+  }
+  function updatePrice() { const el = $('#modalPrice'); el.innerHTML = `${fmt(state.f.prices[state.vol])} <small>₽</small>`; el.classList.remove('is-flip'); void el.offsetWidth; el.classList.add('is-flip'); }
+  function closeModal() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('is-locked'); lastFocus?.focus?.({ preventScroll: true }); }
+  function modalInit() {
+    $$('[data-close]', modal).forEach(el => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+    $('#ctaConsult').addEventListener('click', () => openModal(null, 50, true));
+    const phone = $('#fPhone');
+    phone.addEventListener('input', () => {
+      let d = phone.value.replace(/\D/g, ''); if (!d) { phone.value = ''; return; }
+      if (d[0] === '8') d = '7' + d.slice(1); if (d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+      let out = '+7'; if (d.length > 1) out += ' (' + d.slice(1, 4); if (d.length >= 4) out += ') ' + d.slice(4, 7);
+      if (d.length >= 7) out += '-' + d.slice(7, 9); if (d.length >= 9) out += '-' + d.slice(9, 11); phone.value = out;
+    });
+    $('#orderForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = $('#fName'), err = $('#formError'), digits = phone.value.replace(/\D/g, '');
+      let ok = true;
+      name.classList.toggle('is-invalid', name.value.trim().length < 2); phone.classList.toggle('is-invalid', digits.length < 11);
+      if (name.value.trim().length < 2) { ok = false; err.textContent = 'Введите имя — хотя бы два символа.'; }
+      else if (digits.length < 11) { ok = false; err.textContent = 'Проверьте номер телефона.'; }
+      err.hidden = ok; if (!ok) return;
+      const btn = $('#submitBtn'); btn.classList.add('is-loading');
+      const payload = { name: name.value.trim(), phone: phone.value, fragrance: state.consult ? null : state.f.name, volume: state.consult ? null : state.vol, price: state.consult ? null : state.f.prices[state.vol], ts: new Date().toISOString() };
+      // Точка подключения бэкенда: fetch('/api/order', { method: 'POST', body: JSON.stringify(payload) })
+      try { const q = JSON.parse(localStorage.getItem('klemni_orders') || '[]'); q.push(payload); localStorage.setItem('klemni_orders', JSON.stringify(q)); } catch (_) {}
+      setTimeout(() => {
+        btn.classList.remove('is-loading'); $('#modalBody').hidden = true; $('#successName').textContent = payload.name;
+        $('#successText').textContent = state.consult ? 'Парфюмер студии перезвонит вам в течение 15 минут в рабочее время и поможет с выбором.' : `Заказ на ${payload.fragrance}, ${payload.volume} мл принят. Перезвоним в течение 15 минут, чтобы уточнить доставку.`;
+        const s = $('#modalSuccess'); s.hidden = false;
+        $$('.success__circle, .success__check', s).forEach(p => { p.style.animation = 'none'; void p.offsetWidth; p.style.animation = ''; });
+      }, 900);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    preloader(); header(); renderCards($('#catalogGrid'), FRAGRANCES); observeReveals(); scrollFX(); fog(); cursor(); finder(); reviews(); modalInit();
+  });
+})();
+
+</script>
+</body>
+</html>
