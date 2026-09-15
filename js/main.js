@@ -10,9 +10,22 @@
   const isTouch = window.matchMedia('(hover: none)').matches;
   const fmt = (n) => n.toLocaleString('ru-RU');
 
-  /* Images are generated in Higgsfield (Nano Banana Pro) and served from the live host. */
-  const IMG_BASE = 'https://klemni-ai.higgsfield.app/img/';
-  const img = (name, sm = false) => `${IMG_BASE}${name}${sm ? '@sm' : ''}.webp`;
+  /* Images are generated in Higgsfield (Nano Banana Pro) and served from its public CDN. */
+  const IMG = {
+    'hero': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_a25764b9-a61a-4324-be83-f9c515de7739_min.webp',
+    'hero-dark': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122928_272ae581-4497-45e1-a370-53512aaab8c2_min.webp',
+    'amber': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_5865186f-cb1c-436b-b5ed-26b6991021e6_min.webp',
+    'iris': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_f045958a-ee6d-4501-91dc-c9eaba29913f_min.webp',
+    'vetiver': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_f9350768-deec-4978-ba74-eda0a29a9b15_min.webp',
+    'atelier': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122926_937c7aee-a84d-45b4-923e-4996a74ba067_min.webp',
+    'spray': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_122925_14d97907-15c3-4367-a8c4-986c0260bcd9_min.webp',
+    'vetiver-noir': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_49b64224-6396-4306-8363-84d3f80e93c5_min.webp',
+    'iris-pale': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_a4235fcf-d93f-4493-a121-b3a88d5b1e5d_min.webp',
+    'citrus-marin': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_d3a89d4c-9c34-42fd-a4db-7b2d173f0aae_min.webp',
+    'nuit-figue': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124740_fec3e178-c33c-412a-bd63-691bf023fc35_min.webp',
+    'bois-de-the': 'https://d8j0ntlcm91z4.cloudfront.net/user_39ZJ7snfEkF9GcHFbctToXco0RM/hf_20260915_124739_d4d9f1b4-253f-4ee0-ba2c-b07ccbee7694_min.webp',
+  };
+  const img = (name) => IMG[name];
 
   /* ---------------- Data ---------------- */
   const FRAGRANCES = [
@@ -45,8 +58,8 @@
   const MOOD_LABELS = { fresh: 'свежий', sweet: 'сладкий', woody: 'древесный', evening: 'вечерний', unisex: 'унисекс' };
 
   /* ---------------- Cards ---------------- */
-  function pictureHTML(f, sizes) {
-    return `<img src="${img(f.image)}" srcset="${img(f.image, true)} 720w, ${img(f.image)} 1400w" sizes="${sizes}" alt="${f.name} — флакон KLEMNI AI" loading="lazy" decoding="async">`;
+  function pictureHTML(f) {
+    return `<img src="${img(f.image)}" alt="${f.name} — флакон KLEMNI AI" loading="lazy" decoding="async">`;
   }
 
   function cardHTML(f) {
@@ -55,7 +68,7 @@
   <div class="card__media">
     ${f.badge ? `<span class="card__badge">${f.badge}</span>` : ''}
     <span class="card__num">Nº ${f.num}</span>
-    ${pictureHTML(f, '(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 30vw')}
+    ${pictureHTML(f)}
   </div>
   <div class="card__body">
     <div class="card__title-row"><h3 class="card__title">${f.name}</h3><span class="card__family">${f.family}</span></div>
@@ -333,7 +346,7 @@
       $('#modalEyebrow').textContent = 'Консультация'; $('#modalTitle').textContent = 'Подобрать аромат вместе';
       $('#modalNotes').textContent = 'Оставьте контакт: парфюмер студии перезвонит, задаст несколько вопросов и предложит 2–3 аромата под вас. Пробники отправим бесплатно.';
     } else {
-      $('#modalPhoto').innerHTML = `<img src="${img(f.image, true)}" alt="${f.name}">`;
+      $('#modalPhoto').innerHTML = `<img src="${img(f.image)}" alt="${f.name}">`;
       $('#modalEyebrow').textContent = `Nº ${f.num} · ${f.family}`; $('#modalTitle').textContent = f.name; $('#modalNotes').textContent = f.notes.join(' · ');
       const volEl = $('#modalVolume');
       volEl.innerHTML = `<span class="volume__thumb"></span>` + VOLUMES.map(v => `<button type="button" data-vol="${v}" class="${v === vol ? 'is-active' : ''}" aria-pressed="${v === vol}">${v} мл</button>`).join('');
